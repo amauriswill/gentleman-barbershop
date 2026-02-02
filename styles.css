@@ -165,6 +165,15 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
+    filter: grayscale(100%) contrast(0.95);
+    transition: filter 220ms ease, transform 220ms ease;
+    display: block;
+}
+
+.menu-item:hover .item-img-wrapper img,
+.menu-item:focus-within .item-img-wrapper img {
+    filter: grayscale(0%) contrast(1.05);
+    transform: scale(1.02);
 }
 
 .btn-add-mini {
