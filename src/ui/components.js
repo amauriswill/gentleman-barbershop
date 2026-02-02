@@ -55,6 +55,8 @@ export const renderCartPopover = (cart, containerId = 'cart-popover') => {
     if (items.length === 0) {
         container.innerHTML = '<div class="popover-empty">No hay cortes agregados.</div>';
         container.classList.remove('visible');
+        const cs = document.getElementById('cart-summary');
+        if (cs) cs.setAttribute('aria-expanded', 'false');
         return;
     }
 
@@ -80,4 +82,6 @@ export const renderCartPopover = (cart, containerId = 'cart-popover') => {
     container.appendChild(list);
     container.appendChild(footer);
     container.classList.add('visible');
+    const cs = document.getElementById('cart-summary');
+    if (cs) cs.setAttribute('aria-expanded', 'true');
 };
