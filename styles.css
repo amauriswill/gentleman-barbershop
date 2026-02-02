@@ -137,20 +137,23 @@ body {
 
 .btn-add-mini {
     position: absolute;
-    bottom: -10px;
-    right: -10px;
+    bottom: -12px;
+    right: -12px;
     background: var(--white);
     border: 1px solid #eee;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 16px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     cursor: pointer;
+    color: var(--text-dark);
 }
+.btn-add-mini svg { width: 16px; height: 16px; display: block; }
+.icon { display: inline-flex; align-items: center; gap: 6px; }
 
 /* Bottom Sheet */
 .bottom-sheet {
@@ -176,6 +179,33 @@ body {
     align-items: center;
 }
 
+/* Cart popover (lista rápida para retirar cortes) */
+.cart-popover {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 90px; /* arriba del bottom-sheet */
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transform: translateY(10px) scale(0.98);
+    opacity: 0;
+    transition: all 240ms ease;
+    z-index: 300;
+    overflow: hidden;
+}
+.cart-popover.visible { transform: translateY(0) scale(1); opacity: 1; }
+.popover-list { max-height: 260px; overflow: auto; }
+.popover-item { display:flex; align-items:center; justify-content:space-between; gap:12px; padding: 12px 16px; border-bottom: 1px solid #f2f2f2; }
+.popover-item .name { font-weight:600; }
+.popover-item .price { color:var(--text-light); }
+.btn-remove { background: #fff; border: 1px solid #eee; width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; }
+.btn-remove svg { width: 16px; height:16px; stroke: var(--text-dark); }
+.popover-footer { padding: 12px 16px; font-weight:700; display:flex; justify-content:space-between; align-items:center; }
+.popover-empty { padding: 16px; color: var(--text-light); text-align:center; }
+
 .cart-summary { display: flex; align-items: center; gap: 15px; }
 
 .badge {
@@ -200,4 +230,5 @@ body {
     color: var(--text-dark);
     border: none;
     padding: 10px 20px;
-    border-
+    border-radius: 8px;
+  }

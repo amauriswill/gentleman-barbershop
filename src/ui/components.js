@@ -1,3 +1,5 @@
+import { scissors, remove } from './icons.js';
+
 export const renderListItem = (item, onAdd) => {
     const div = document.createElement('div');
     div.className = 'menu-item';
@@ -9,7 +11,7 @@ export const renderListItem = (item, onAdd) => {
         </div>
         <div class="item-img-wrapper">
             <img src="assets/images/${item.img}" alt="${item.name}" loading="lazy">
-            <button class="btn-add-mini" aria-label="Agregar">+</button>
+            <button class="btn-add-mini" aria-label="Agregar">${scissors}</button> 
         </div>
     `;
     
@@ -38,4 +40,44 @@ export const updateBottomSheet = (total, count) => {
     } else {
         sheet.classList.remove('visible');
     }
+};
+
+export const renderCartPopover = (cart, containerId = 'cart-popover') => {
+    let container = document.getElementById(containerId);
+    if (!container) {
+        container = document.createElement('div');
+        container.id = containerId;
+        container.className = 'cart-popover';
+        document.body.appendChild(container);
+    }
+
+    const items = cart.items || [];
+    if (items.length === 0) {
+        container.innerHTML = '<div class="popover-empty">No hay cortes agregados.</div>';
+        container.classList.remove('visible');
+        return;
+    }
+
+    container.innerHTML = '';
+    const list = document.createElement('div');
+    list.className = 'popover-list';
+
+    items.forEach(i => {
+        const row = document.createElement('div');
+        row.className = 'popover-item';
+        row.innerHTML = `
+            <div class="name">${i.name} <small>x${i.qty}</small></div>
+            <div class="price">$${(i.price * i.qty).toFixed(2)}</div>
+            <button class="btn-remove" data-remove="${i.id}" aria-label="Retirar">${remove}</button>
+        `;
+        list.appendChild(row);
+    });
+
+    const footer = document.createElement('div');
+    footer.className = 'popover-footer';
+    footer.innerHTML = `<div class="popover-total">Total: $${cart.getTotal().toFixed(2)}</div>`;
+
+    container.appendChild(list);
+    container.appendChild(footer);
+    container.classList.add('visible');
 };
