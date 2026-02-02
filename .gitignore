@@ -1,0 +1,24 @@
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+build/
+
+# Env
+.env
+
+# Logs
+*.log
+
+# OS
+ehthumbs.db
+Icon?

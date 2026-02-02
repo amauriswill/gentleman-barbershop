@@ -1,0 +1,203 @@
+:root {
+    --bg-color: #FDFBF7; /* Crema muy suave */
+    --text-dark: #1A1A1A;
+    --text-light: #666666;
+    --accent: #1A1A1A; /* Negro elegante para botones */
+    --gold: #D4AF37; /* Toque premium */
+    --white: #FFFFFF;
+    --shadow: 0 4px 20px rgba(0,0,0,0.06);
+    --radius: 16px;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    padding-bottom: 100px; /* Espacio para el bottom sheet */
+}
+
+/* Header Estilo Hero */
+.app-header {
+    background: var(--white);
+    padding: 20px 20px 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+.header-content p {
+    color: var(--text-light);
+    font-size: 14px;
+    margin: 5px 0 20px 0;
+}
+
+/* Tabs de Navegación */
+.category-tabs {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scrollbar-width: none; /* Ocultar scrollbar */
+}
+.category-tabs::-webkit-scrollbar { display: none; }
+
+.tab {
+    background: none;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-light);
+    white-space: nowrap;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.tab.active {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--text-dark);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Lista del Menú (La clave de la usabilidad) */
+.menu-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.menu-item:active { transform: scale(0.98); }
+
+.item-info { flex: 1; padding-right: 15px; }
+
+.item-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+.item-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.item-price {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.item-img-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.item-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.btn-add-mini {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    background: var(--white);
+    border: 1px solid #eee;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* Bottom Sheet */
+.bottom-sheet {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: var(--text-dark);
+    border-radius: 20px;
+    padding: 15px 20px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transform: translateY(150%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 200;
+}
+
+.bottom-sheet.visible { transform: translateY(0); }
+
+.sheet-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-summary { display: flex; align-items: center; gap: 15px; }
+
+.badge {
+    background: var(--gold);
+    color: var(--text-dark);
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.total-info { display: flex; flex-direction: column; }
+.total-info small { color: #ccc; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+.total-info span { font-size: 18px; font-weight: 700; font-family: 'Playfair Display', serif; }
+
+.btn-primary {
+    background: var(--white);
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    border-
