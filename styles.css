@@ -381,18 +381,22 @@ body {
 .menu-list.prose .item-info { padding-right: 12px; }
 
 .price-list{
-    margin:6px 0 0 0;
-    padding-left:20px;
-    list-style-type: disc;
+    margin:8px 0 0 0;
+    padding-left:0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
-.price-list li{
-    margin:6px 0;
-    padding: 4px 8px;
+.price-item{
+    margin:0;
+    padding: 6px 10px;
     border-radius: 6px;
     transition: background-color 0.2s ease, color 0.2s ease;
     cursor: pointer;
+    font-size: 15px;
+    line-height: 1.4;
 }
-.price-list li:hover{
+.price-item:hover{
     background-color: rgba(212, 175, 55, 0.08);
     color: var(--accent);
 }

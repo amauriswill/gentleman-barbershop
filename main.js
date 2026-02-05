@@ -72,7 +72,7 @@ function loadItems(category) {
     fragment.appendChild(createCard({
         title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.title') : 'Adults',
         desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.desc') : 'Classic and modern haircuts. Beard trimming available.' +
-            '<ul class="price-list"><li>Cut — $30</li><li>Modern Cut — $35</li><li>Cut + Beard — $35</li></ul>',
+            '<div class="price-list"><div class="price-item">Cut — $30</div><div class="price-item">Modern Cut — $35</div><div class="price-item">Cut + Beard — $35</div></div>',
         actions: [
             { label: 'Cut — $30', message: "Hi, I'd like to book a Cut (adult) - $30." },
             { label: 'Modern Cut — $35', message: "Hi, I'd like to book a Modern Cut (adult) - $35." },
@@ -84,7 +84,7 @@ function loadItems(category) {
     fragment.appendChild(createCard({
         title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.title') : 'Kids',
         desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.desc') : 'Haircuts for little ones. Friendly, safe environment.' +
-            '<ul class="price-list"><li>Traditional Cut — $25</li><li>Modern Cut — $30</li></ul>',
+            '<div class="price-list"><div class="price-item">Traditional Cut — $25</div><div class="price-item">Modern Cut — $30</div></div>',
         actions: [ 
             { label: 'Traditional Cut — $25', message: "Hi, I'd like to book a Traditional Cut (kids) - $25." },
             { label: 'Modern Cut — $30', message: "Hi, I'd like to book a Modern Cut (kids) - $30." } 
