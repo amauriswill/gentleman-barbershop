@@ -1,0 +1,14 @@
+{
+  "name": "gentleman-barbershop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "images:build": "node ./scripts/process-images.js",
+    "images:clean": "node ./scripts/clean-images.js"
+  },
+  "devDependencies": {
+    "glob": "^10.3.3",
+    "sharp": "^0.33.0",
+    "svgo": "^3.0.0"
+  }
+}

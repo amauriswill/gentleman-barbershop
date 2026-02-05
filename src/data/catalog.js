@@ -5,4 +5,4 @@ export const catalog = [
     { id: 4, type: 'product', name: 'Aceite Barba', price: 18.00, img: 'aceite.svg' }
 ];
 
-export const BUSINESS_PHONE = "18294260514"; // Número internacional (DR): 1 829 426 0514 (sin +, formato para wa.me)
+export const BUSINESS_PHONE = "5997002566"; // Número para wa.me (sin +, formato: país + número)

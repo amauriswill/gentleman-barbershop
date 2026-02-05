@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "all": "Todo",
+    "services": "Servicios",
+    "products": "Productos"
+  },
+  "theme": {
+    "toggle": "Alternar modo oscuro",
+    "title": "Modo oscuro"
+  },
+  "bottom": {
+    "estimated": "Total estimado",
+    "checkout": "Agendar por WhatsApp"
+  },
+  "buttons": {
+    "add": "Agregar",
+    "remove": "Retirar",
+    "contact": "Contactar"
+  },
+  "items": {
+    "default_desc": "Descripción breve del servicio o producto."
+  },
+  "popover": {
+    "empty": "No hay cortes agregados.",
+    "total": "Total:"
+  },
+  "cart": {
+    "header": "Hola, quisiera reservar/pedir lo siguiente:",
+    "total_label": "Total"
+  },
+  "cards": {
+    "kids": {
+      "title": "Niños",
+      "desc": "Cortes para los más pequeños. Ambiente amigable y seguro.",
+      "actions": {
+        "cut": { "label": "Corte", "message": "Hola, quisiera reservar un corte para niño." }
+      }
+    },
+    "adults": {
+      "title": "Adultos",
+      "desc": "Cortes clásicos y modernos. También ofrecemos arreglo de barba.",
+      "actions": {
+        "cut": { "label": "Corte", "message": "Hola, quisiera reservar un corte (adulto)." },
+        "cut_beard": { "label": "Corte + Barba", "message": "Hola, quisiera reservar un corte con barba (adulto)." }
+      }
+    },
+    "extras": {
+      "title": "Extras",
+      "desc": "Servicios adicionales: tintes, tratamientos capilares, arreglo de cejas y más. Contáctanos para más detalles.",
+      "actions": {
+        "contact": { "label": "Contactar", "message": "Hola, quisiera información sobre extras." }
+      }
+    }
+  }
+}

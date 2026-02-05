@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "all": "All",
+    "services": "Services",
+    "products": "Products"
+  },
+  "theme": {
+    "toggle": "Toggle dark mode",
+    "title": "Dark mode"
+  },
+  "bottom": {
+    "estimated": "Estimated total",
+    "checkout": "Schedule via WhatsApp"
+  },
+  "buttons": {
+    "add": "Add",
+    "remove": "Remove",
+    "contact": "Contact"
+  },
+  "items": {
+    "default_desc": "Brief description of the service or product."
+  },
+  "popover": {
+    "empty": "No cuts added.",
+    "total": "Total:"
+  },
+  "cart": {
+    "header": "Hi, I'd like to book/order the following:",
+    "total_label": "Total"
+  },
+  "cards": {
+    "kids": {
+      "title": "Kids",
+      "desc": "Haircuts for little ones. Friendly, safe environment.",
+      "actions": {
+        "cut": { "label": "Cut", "message": "Hi, I'd like to book a kids haircut." }
+      }
+    },
+    "adults": {
+      "title": "Adults",
+      "desc": "Classic and modern haircuts. Beard trimming available.",
+      "actions": {
+        "cut": { "label": "Cut", "message": "Hi, I'd like to book an adult haircut." },
+        "cut_beard": { "label": "Cut + Beard", "message": "Hi, I'd like to book a haircut with beard service." }
+      }
+    },
+    "extras": {
+      "title": "Extras",
+      "desc": "Additional services: dyes, treatments, eyebrow shaping and more. Contact us for details.",
+      "actions": {
+        "contact": { "label": "Contact", "message": "Hi, I'd like information about extras." }
+      }
+    }
+  }
+}

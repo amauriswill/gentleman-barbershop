@@ -50,11 +50,14 @@ export class Cart {
 
     // Genera el link de WhatsApp (Caso de uso principal)
     generateWhatsAppLink(phone) {
-        let text = "Hola, quisiera reservar/pedir lo siguiente:%0A";
+        const t = (window.i18n && window.i18n.t) ? window.i18n.t : (k => k);
+        let header = t('cart.header','Hola, quisiera reservar/pedir lo siguiente:');
+        let text = `${header}%0A`;
         this.items.forEach(i => {
             text += `- ${i.name} (x${i.qty}): $${(i.price * i.qty).toFixed(2)}%0A`;
         });
-        text += `%0A*Total: $${this.getTotal().toFixed(2)}*`;
+        const totalLabel = t('cart.total_label','Total');
+        text += `%0A*${totalLabel}: $${this.getTotal().toFixed(2)}*`;
         return `https://wa.me/${phone}?text=${text}`;
     }
 } 
