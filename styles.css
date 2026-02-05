@@ -25,7 +25,8 @@ body {
 /* Header Estilo Hero */
 .app-header {
     background: var(--white);
-    padding: 20px 20px 0 20px;
+    /* remove horizontal padding so .header-inner.prose can align exactly with .menu-list.prose */
+    padding: 20px 0 0 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -167,7 +168,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .app-header { padding: 14px 12px 0 12px; }
+    .app-header { padding: 14px 0 0 0; }
     .header-content h1 { font-size: 20px; }
     .header-content p { font-size: 12px; }
     .category-tabs { gap: 12px; }
