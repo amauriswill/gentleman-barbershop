@@ -26,10 +26,33 @@ export const renderListItem = (item, onAdd) => {
         picture.appendChild(fallback);
     } else {
         const fallback = document.createElement('img');
-        fallback.src = `assets/images/${item.img}`;
+        const src = `assets/images/${item.img}`;
+        fallback.src = src;
         fallback.alt = item.name;
         fallback.loading = 'lazy';
         picture.appendChild(fallback);
+
+        // If the asset is an SVG, fetch and inline it so it can inherit `currentColor`.
+        if (/\.svg$/i.test(item.img)) {
+            fetch(src).then(r => r.text()).then(svgText => {
+                try {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(svgText, 'image/svg+xml');
+                    const svg = doc.documentElement;
+                    svg.removeAttribute('width');
+                    svg.removeAttribute('height');
+                    svg.setAttribute('role', 'img');
+                    svg.setAttribute('aria-label', item.name);
+                    svg.classList.add('inline-svg');
+                    // Replace the <img> fallback with the inlined SVG
+                    picture.innerHTML = '';
+                    picture.appendChild(svg);
+                } catch (err) {
+                    // fallback remains as <img>
+                    console.warn('Failed to inline SVG', src, err);
+                }
+            }).catch(()=>{/* ignore fetch errors, keep img */});
+        }
     }
 
     imgWrapper.appendChild(picture);

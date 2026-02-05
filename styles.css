@@ -439,3 +439,15 @@ body {
 :root.dark .item-img-wrapper img[src$=".svg"] {
     filter: invert(1) grayscale(1) contrast(1.05);
 }
+
+/* Inline SVGs should inherit color from their container via `currentColor` */
+.item-img-wrapper svg.inline-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: var(--text-dark);
+}
+
+:root.dark .item-img-wrapper svg.inline-svg {
+    color: var(--text-light);
+}
