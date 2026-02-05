@@ -16,7 +16,7 @@
 
 body {
     background-color: var(--bg-color);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color: var(--text-dark);
     margin: 0;
     padding-bottom: 100px; /* Espacio para el bottom sheet */
@@ -43,7 +43,7 @@ body {
 /* theme toggle removed (single light theme) */
 
 .header-content h1 { 
-    font-family: 'Playfair Display', serif;
+    font-family: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 28px;
     margin: 0;
     letter-spacing: -0.5px;
@@ -67,7 +67,7 @@ body {
 .tab {
     background: none;
     border: none;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;
     font-weight: 500;
     color: var(--text-light);
@@ -114,7 +114,7 @@ body {
 }
 
 .prose h1, .prose h2, .prose h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color: var(--text-dark);
     line-height: 1.2;
     margin-top: 0.25em;
@@ -174,7 +174,7 @@ body {
 .item-info { flex: 1; padding-right: 15px; }
 
 .item-info h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 18px;
     margin: 0 0 5px 0;
 }
@@ -310,7 +310,7 @@ body {
 
 .total-info { display: flex; flex-direction: column; }
 .total-info small { color: #ccc; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
-.total-info span { font-size: 18px; font-weight: 700; font-family: 'Playfair Display', serif; }
+.total-info span { font-size: 18px; font-weight: 700; font-family: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
 
 .btn-primary {
     background: var(--white);
