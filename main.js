@@ -6,6 +6,39 @@ import { initI18n } from './src/i18n.js';
 // Initialize i18n (default to English)
 await initI18n('en');
 
+// Initialize theme (dark mode)
+const themeToggle = document.getElementById('theme-toggle');
+const sunIcon = themeToggle.querySelector('.sun-icon');
+const moonIcon = themeToggle.querySelector('.moon-icon');
+
+function setTheme(isDark) {
+    if (isDark) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+    }
+}
+
+// Load saved theme or detect system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme === 'dark');
+} else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark);
+}
+
+themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    setTheme(!isDark);
+});
+
 const cart = new Cart();
 const listContainer = document.getElementById('menu-list');
 const tabs = document.querySelectorAll('.tab');

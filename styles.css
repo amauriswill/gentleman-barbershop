@@ -10,7 +10,16 @@
     --radius: 16px;
 }
 
-/* Dark theme removed — site uses a single light palette */
+/* Dark theme */
+:root.dark {
+    --bg-color: #0F0F0F;
+    --text-dark: #FFFFFF;
+    --text-light: #AAAAAA;
+    --accent: #D4AF37;
+    --white: #1A1A1A;
+    --card: #1F1F1F;
+    --shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
@@ -37,6 +46,22 @@ body {
 }
 
 .header-actions { display:flex; gap:8px; align-items:center; margin-left: 12px; }
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+}
 
 .header-content { flex: 1 1 auto; text-align: left; }
 .header-content p { margin-top: 6px; color: var(--text-light); }
