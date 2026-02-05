@@ -52,6 +52,7 @@ function loadItems(category) {
         if (actions && actions.length) {
             const row = document.createElement('div');
             row.style.display = 'flex';
+            row.style.flexDirection = 'column';
             row.style.gap = '8px';
             actions.forEach(a => {
                 const btn = document.createElement('button');
