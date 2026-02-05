@@ -433,3 +433,9 @@ body {
     background-color: rgba(212, 175, 55, 0.08);
     color: var(--accent);
 }
+
+/* Make simple SVG icons adapt to dark mode by inverting their fill when using external SVGs
+   This targets only .item-img-wrapper images that are SVGs to avoid inverting photos. */
+:root.dark .item-img-wrapper img[src$=".svg"] {
+    filter: invert(1) grayscale(1) contrast(1.05);
+}
