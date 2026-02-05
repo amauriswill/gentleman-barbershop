@@ -379,3 +379,11 @@ body {
 .menu-list.prose .btn-primary:active { transform: translateY(1px); }
 
 .menu-list.prose .item-info { padding-right: 12px; }
+
+.price-list{
+    margin:6px 0 0 0;
+    padding-left:18px;
+}
+.price-list li{
+    margin:4px 0;
+}

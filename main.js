@@ -68,28 +68,35 @@ function loadItems(category) {
         return div;
     }
 
-    // Niños: solo opción Corte
+    // Adults: Cut / Modern Cut / Cut + Beard (with prices)
     fragment.appendChild(createCard({
-        title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.title') : 'Niños',
-        desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.desc') : 'Cortes para los más pequeños. Ambiente amigable y seguro.',
-        actions: [ { label: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.actions.cut.label') : 'Corte', message: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.actions.cut.message') : 'Hola, quisiera reservar un corte para niño.' } ]
-    }));
-
-    // Adultos: Corte y Corte con barba
-    fragment.appendChild(createCard({
-        title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.title') : 'Adultos',
-        desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.desc') : 'Cortes clásicos y modernos. También ofrecemos arreglo de barba.',
+        title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.title') : 'Adults',
+        desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.desc') : 'Classic and modern haircuts. Beard trimming available.' +
+            '<ul class="price-list"><li>Cut — $30</li><li>Modern Cut — $35</li><li>Cut + Beard — $35</li></ul>',
         actions: [
-            { label: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.actions.cut.label') : 'Corte', message: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.actions.cut.message') : 'Hola, quisiera reservar un corte (adulto).' },
-            { label: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.actions.cut_beard.label') : 'Corte + Barba', message: (window.i18n && window.i18n.t) ? window.i18n.t('cards.adults.actions.cut_beard.message') : 'Hola, quisiera reservar un corte con barba (adulto).' }
+            { label: 'Cut — $30', message: "Hi, I'd like to book a Cut (adult) - $30." },
+            { label: 'Modern Cut — $35', message: "Hi, I'd like to book a Modern Cut (adult) - $35." },
+            { label: 'Cut + Beard — $35', message: "Hi, I'd like to book a Cut with Beard (adult) - $35." }
         ]
     }));
 
-    // Extras: recuadro con brief description y contacto
+    // Kids: Traditional Cut / Modern Cut
+    fragment.appendChild(createCard({
+        title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.title') : 'Kids',
+        desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.kids.desc') : 'Haircuts for little ones. Friendly, safe environment.' +
+            '<ul class="price-list"><li>Traditional Cut — $25</li><li>Modern Cut — $30</li></ul>',
+        actions: [ 
+            { label: 'Traditional Cut — $25', message: "Hi, I'd like to book a Traditional Cut (kids) - $25." },
+            { label: 'Modern Cut — $30', message: "Hi, I'd like to book a Modern Cut (kids) - $30." } 
+        ]
+    }));
+
+    // Extras: list, no fixed prices — ask first
     fragment.appendChild(createCard({
         title: (window.i18n && window.i18n.t) ? window.i18n.t('cards.extras.title') : 'Extras',
-        desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.extras.desc') : 'Servicios adicionales: tintes, tratamientos capilares, arreglo de cejas y más. Contáctanos para más detalles.',
-        actions: [ { label: (window.i18n && window.i18n.t) ? window.i18n.t('cards.extras.actions.contact.label') : 'Contactar', message: (window.i18n && window.i18n.t) ? window.i18n.t('cards.extras.actions.contact.message') : 'Hola, quisiera información sobre extras.' } ]
+        desc: (window.i18n && window.i18n.t) ? window.i18n.t('cards.extras.desc') : 'Additional services:',
+        actions: [],
+        extrasHtml: '<ul class="price-list"><li>Hairline</li><li>Eyebrows</li><li>Dye</li><li>Free Style</li></ul><p style="margin-top:8px; font-size:13px; color:var(--text-light);">These services have different prices. Please ask before applying.</p>'
     }));
 
     listContainer.appendChild(fragment);
