@@ -49,6 +49,9 @@ body {
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
+    /* remove the standard prose padding so header aligns exactly with .menu-list.prose */
+    padding-left: 0;
+    padding-right: 0;
 }
 .app-header .header-inner > .header-content { flex: 1 1 320px; }
 .app-header .header-inner > .category-tabs { flex: 0 1 100%; margin-top: 8px; }
@@ -60,6 +63,7 @@ body {
     font-size: 28px;
     margin: 0;
     letter-spacing: -0.5px;
+    font-weight: 700; /* restore bold weight for desktop */
 }
 .header-content p {
     color: var(--text-light);
