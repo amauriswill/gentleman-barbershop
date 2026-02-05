@@ -40,6 +40,17 @@ body {
 .header-content { flex: 1 1 auto; text-align: left; }
 .header-content p { margin-top: 6px; color: var(--text-light); }
 
+/* Header inner aligns to the prose max-width so logo and cards line up */
+.app-header .header-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.app-header .header-inner > .header-content { flex: 1 1 320px; }
+.app-header .header-inner > .category-tabs { flex: 0 1 100%; margin-top: 8px; }
+
 /* theme toggle removed (single light theme) */
 
 .header-content h1 { 
@@ -146,6 +157,7 @@ body {
     .header-content h1 { font-size: 22px; }
     .menu-list.prose .menu-item { flex-direction: row; gap: 12px; }
     .item-img-wrapper { width: 72px; height: 72px; }
+    .app-header .header-inner > .category-tabs { margin-top: 6px; }
 }
 
 @media (max-width: 480px) {
