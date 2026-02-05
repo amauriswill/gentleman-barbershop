@@ -42,11 +42,13 @@ body {
 
 /* Header inner aligns to the prose max-width so logo and cards line up */
 .app-header .header-inner {
-    width: 100%;
+    /* let the .prose class control max-width and centering */
     display: flex;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
 }
 .app-header .header-inner > .header-content { flex: 1 1 320px; }
 .app-header .header-inner > .category-tabs { flex: 0 1 100%; margin-top: 8px; }
