@@ -382,8 +382,17 @@ body {
 
 .price-list{
     margin:6px 0 0 0;
-    padding-left:18px;
+    padding-left:20px;
+    list-style-type: disc;
 }
 .price-list li{
-    margin:4px 0;
+    margin:6px 0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+.price-list li:hover{
+    background-color: rgba(212, 175, 55, 0.08);
+    color: var(--accent);
 }
